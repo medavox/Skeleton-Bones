@@ -23,7 +23,7 @@
 
 </div>
 
-Library for dynamically generating and animating skeleton drawables. This library can generate a drawable skeleton loader for any View or ViewGroup. Simply define the desired properties and the skeleton drawable will be generated for the ViewGroup and its children. It is that simple! Below you'll find information on how to use this library. [**Medium Article**](https://medium.com/android-dev-nation/android-skeleton-loaders-1ae979a9d8c9?source=friends_link&sk=3311378eeb72ec136d423441b63541b3)
+A Library for dynamically generating and animating skeleton drawables. This library can generate a drawable skeleton loader for any View or ViewGroup. Simply define the desired properties, and the skeleton drawable will be generated for the ViewGroup and its children. It is that simple! Below you'll find information on how to use this library. [**Medium Article**](https://medium.com/android-dev-nation/android-skeleton-loaders-1ae979a9d8c9?source=friends_link&sk=3311378eeb72ec136d423441b63541b3)
 
 ![Banner Demo](./media/images/banner_rounded.png)
 <div align="center">
@@ -65,7 +65,7 @@ Library for dynamically generating and animating skeleton drawables. This librar
 # Resources
 </div>
 
-For a more thorough guides and descriptions please look at the following links:
+For more thorough guides and descriptions please look at the following links:
 
 [**Skeleton**](./docs/elements/SKELETON.md) Contains information about skeletons and their properties
 
@@ -86,13 +86,13 @@ For a more thorough guides and descriptions please look at the following links:
 # Glossary
 </div>
 
-**Skeleton**: A drawable loader representation of a ViewGroup. The skeleton is the wrapper around the generated bones where each bone represents a view within the ViewGroup. The skeleton is in charge of managing and rendering each of the bones generated for each non-ignored view within the owner layout. Skeleton drawables are recommended over single Bone Drawables when possible since the a single drawable is used for representing a complex layout. The skeleton drawable is created and overlaid over the layout in order to render the bones and the visible shimmers. See [**Shimmer Rays**](./docs/elements/BONE_SHIMMER_RAY.md), See [**Skeleton**](./docs/elements/SKELETON.md)
+**Skeleton**: A drawable loader representation of a ViewGroup. The skeleton is the wrapper around the generated bones, where each bone represents a view within the ViewGroup. The skeleton is in charge of managing and rendering each of the bones generated (for each non-ignored view) within the owner layout. Skeleton drawables are recommended over single Bone Drawables when possible, since the a single drawable is used for representing a complex layout. The skeleton drawable is created and laid over the layout in order to render the bones and the visible shimmers. See [**Shimmer Rays**](./docs/elements/BONE_SHIMMER_RAY.md), See [**Skeleton**](./docs/elements/SKELETON.md)
 
 
-**Skeleton Bone**: A bone drawable loader representation of a View. Bones are typically contained within a skeleton, but bones can also be on their own. When a bone is contained within a parent that is a SkeletonDrawable, the parent drawable is in charge of the rendering of said bone. Every detail of the bone can be customized in order to provide the best look. When a bone is not contained within a Skeleton, the bone is then an independent bone and has similar but limited functionality. The bone can have its own state and can display an overlay shimmer. Below you'll find a list of properties that can be customized. Independent bones can share properties through a [**BonePropertyHolder**](#using-a-property-holder), See [**Skeleton Bones**](./docs/elements/SKELETON_BONE.md)
+**Skeleton Bone**: A bone drawable representing a loading View. Bones are typically contained within a skeleton, but can also exist on their own. When a bone is contained within a SkeletonDrawable parent, that parent drawable is in charge of rendering that bone. Every detail of the bone can be customized, to provide the best look. When a bone isn't contained within a Skeleton, it's then an independent bone and has similar but limited functionality. The bone can have its own state and can display an overlay shimmer. Below you'll find a list of properties that can be customized. Independent bones can share properties through a [**BonePropertyHolder**](#using-a-property-holder), See [**Skeleton Bones**](./docs/elements/SKELETON_BONE.md)
 
 
-**Shimmer Ray**: The effect that overlays a skeleton or bone in order to communicate to the user that the View or ViewGroup is currently loading. Shimmer rays can be applied to both Skeletons and individual bones. Most aspects of the shimmer rays can be customized. See [**Shimmer Rays**](./docs/elements/BONE_SHIMMER_RAY.md)
+**Shimmer Ray**: The animated effect overlaying a skeleton/bone, which communicates to the user that the ViewGroup/View is currently loading. Shimmer rays can be applied to both Skeletons and individual bones. Most aspects of the shimmer rays can be customized. See [**Shimmer Rays**](./docs/elements/BONE_SHIMMER_RAY.md)
 <br/>
 <br/>
 
@@ -104,10 +104,10 @@ For a more thorough guides and descriptions please look at the following links:
 
 * Lightweight and easy to use
 * Non-invasive, No changes to existing code required.
-* No layout nor view wrapping which creates complex hierarchies
+* No wrapping of layouts or views --  which creates complex hierarchies
 * No mock layouts needed
-* Pixel perfect skeleton bone placing
-* Disposed when no longer needed
+* Pixel-perfect skeleton bone placing
+* Disposed of when no longer needed
 * No boilerplate
 * Uses data binding
 * Highly performant
@@ -123,21 +123,21 @@ For a more thorough guides and descriptions please look at the following links:
 
 <br/>
 
-**Bones** is highly customizable and provides you the freedom of creating concise skeletons that will fit your apps design seamlessly. Although the recommended way of using bones is to apply it and modify it using data-binding, it is possible to customize Bones by directly accessing its properties through an instance. Bones can be customized by creating an instance of a **`SkeletonDrawable`** or **`BoneDrawable`** and directly applying the desired properties to it. The properties can be modified using both builder and property accessors patterns. It can also be use with data-binding.
+**Bones** is highly customizable and provides you the freedom of creating concise skeletons that will fit your app designs seamlessly. Although the recommended way of using bones is to apply and modify it using data-binding, it is possible to customize Bones by directly accessing its properties through an instance. Bones can be customized by creating an instance of a **`SkeletonDrawable`** or **`BoneDrawable`** and directly applying the desired properties to it. The properties can be modified using both builder and property accessor patterns. It can also be used with data-binding.
 
 <br/>
 
 ## Examples and demos
 
-Check out the demo branches in this project for demos. New demo-3 added which showcases skeleton drawables without data-binding
+Check out the demo branches in this project for demos. New demo-3 added which showcases skeleton drawables without data-binding!
 
-## How can I use in my project?
+## How can I use it in my project?
 
 [![](https://jitpack.io/v/EudyContreras/Skeleton-Bones.svg)](https://jitpack.io/#EudyContreras/Skeleton-Bones)
 
 ### Step 1
 
-Add it in your root build.gradle at the end of repositories:
+Add it to your root build.gradle at the end of repositories:
 
 ``` gradle
 allprojects {
@@ -147,7 +147,7 @@ allprojects {
 }
 ```
 
-Add as a dependency in you applications build.gradle.
+Add as a dependency in your app build.gradle.
 
 ``` gradle
 dependencies {
@@ -201,6 +201,8 @@ val viewGroup: ViewGroup = getSomeContainer()
 viewGroup.applySkeletonDrawable().apply {  }
 ```
 
+### Example Usage 3:
+
 **Use the builder pattern by calling build on the instance of the drawable**
 
 
@@ -218,7 +220,9 @@ SkeletonDrawable.create(viewGroup)
   .setCornerRadius(10f)
 ```
 
-**You can use accessor patterns**
+### Example Usage 4:
+
+**You can also use accessor patterns**
 
 
 ```kotlin
@@ -236,7 +240,7 @@ SkeletonDrawable.create(viewGroup).apply {
 }
 ```
 
-The recommended way of applying a skeleton drawable is by using **Bone's** data-binding properties/attributes. Here are the lists of the main properties that can be applied in order to achieve a desirable effect.
+The recommended way of applying a skeleton drawable is by using **Bone's** data-binding properties/attributes. Here are the lists of the main properties you can use to achieve a desired effect.
 <br/>
 <br/>
 
@@ -246,7 +250,7 @@ The recommended way of applying a skeleton drawable is by using **Bone's** data-
 # ViewGroup Skeleton Attributes
 </div>
 
-These are the properties that can be access through any ViewGroup. Although, some of the following properties will also work when set from a View, the behaviour will be different.
+These are the properties that can be accessed through any ViewGroup. Although some of these properties will also work when set from a View, the behaviour will be different.
 
 * Properties that start with `skeleton` are applied to the actual skeleton **`ViewGroup`** which generates the bones. 
 * Properties that start with `skeletonBone` are applied to the children bone (Views) of the skeleton.
@@ -299,7 +303,7 @@ These are the properties that can be access through any ViewGroup. Although, som
 </div>
   <br/>
   
->Each of the above attributes has documentation. Please consult the **xml docs** by hovering over the attribute in order to get a more detailed description of the attribute. If you rather read more in detail about the properties and about skeletons, please check out this link: [**Skeleton**](./docs/elements/SKELETON.md)
+>Each of the above attributes has documentation. Please consult the **xml docs** by hovering over the attribute in order to get a more detailed description of the attribute. If you'd rather read more detail about the properties and about skeletons, check out this link: [**Skeleton**](./docs/elements/SKELETON.md)
 
 <br/>
 
@@ -309,7 +313,7 @@ These are the properties that can be access through any ViewGroup. Although, som
 # View Bone Attributes
 </div>
 
-The following are bone properties that can be access through any View. Some of these will not work when set from an independent BoneDrawable since they are meant only for virtually dependent bones within a Skeleton ViewGroup. For more information feel free to consult the Bone document. See [**Skeleton Bones**](./docs/elements/SKELETON_BONE.md)
+The following are bone properties that can be accessed through any View. Some of these will not work when set from an independent BoneDrawable, since they are meant only for virtually dependent bones within a Skeleton ViewGroup. For more information, consult the Bone document. See [**Skeleton Bones**](./docs/elements/SKELETON_BONE.md)
 <br/>
 
 <div align="center">
@@ -370,7 +374,7 @@ The following are bone properties that can be access through any View. Some of t
 # Using a Property Holder
 </div>
 
-**BonePropertyHolder** This is a fake View that can be added anywhere within the view hierarchy. It has the sole purpose of acting as a property holder that can later be referenced by any View (Bone). The bone created for that view will then clone the properties of the BonePropertyHolder in order to define its own properties. This is usually done when multiple views share a same independent style or behaviour.
+**BonePropertyHolder** is a fake View that can be added anywhere within the view hierarchy. It has the sole purpose of acting as a property holder that can later be referenced by any View (Bone). That view's bone will then clone the properties of the BonePropertyHolder for its own properties. This is usually done when multiple views share the same independent style or behaviour.
 
 The BoneProperty holder can make use of the following properties. For a detailed description of the properties and their effects please refer to the property guide. 
 <br/>
@@ -416,7 +420,7 @@ The BoneProperty holder can make use of the following properties. For a detailed
 # How does it work?
 </div>
 
-The library works by creating a drawable based on some **`View`** or **`ViewGroup`**. The drawable can listen to a state using data-binding. When the state is true the skeleton loader drawable is shown and animated if it has any shimmers added to it. Each skeleton drawable has a skeleton object and a skeleton manager which is in charge for manipulating the skeleton, the bones and the shimmer rays. Same applies to BoneDrawables. The skeleton is visually created based on the ViewGroup/View that the drawable was bound to and then added as an overlay. The skeleton loader drawables are added as temporary foreground drawables. Once the state of the loader changes to false, the skeleton or bone drawable is removed and the original foreground is restored given that one was previously present.
+The library works by creating a drawable based on some **`View`** or **`ViewGroup`**. The drawable can listen to a state using data-binding. When the state is true the skeleton loader drawable is shown (and animated if it has any shimmers added to it). Each skeleton drawable has a skeleton object, and a skeleton manager which is in charge of manipulating the skeleton, the bones and the shimmer rays. Same applies to BoneDrawables. The skeleton is visually created based on the ViewGroup/View that the drawable was bound to and then added as an overlay. The skeleton loader drawables are added as temporary foreground drawables. Once the state of the loader changes to false, the skeleton or bone drawable is removed and the original foreground is restored to the one was previously present.
 
 <br/>
 
@@ -426,9 +430,9 @@ The library works by creating a drawable based on some **`View`** or **`ViewGrou
 # Caveats, Limitations and Notes
 </div>
 
-**BEWARE** In order for the skeleton and bone drawables to be properly generated, there **must** be some pre-determined minimum set dimensions **(Width and Height)** for the none ignored children. This is needed in order to know how to visually build the bone representations of said children views.
+**BEWARE** In order for the skeleton and bone drawables to be properly generated, there **must** be some pre-determined minimum set dimensions **(Width and Height)** for the non-ignored children. This is needed in order to know how to visually build the bone representations of said child views.
 
-Setting dimensions using the **`android:minWidth`** and/or the **`android:minHeight`** should suffice. Otherwise if the minWidth and/or minHeight are set using the skeleton binding properties  **`app:skeletonBoneMinWidth`** and **`app:skeletonBoneMinHeight`**, the dimensions will then be applied to the view and restored once the loading state is set to false. (The content has loaded). Additionally restoring the bounds of the view once the content was loaded can be done using layout animations in order to provide a smoother user experience. This is optional and can be done by setting this to true **`skeletonAnimateRestoredBounds`**.
+Setting dimensions using the **`android:minWidth`** and/or the **`android:minHeight`** should suffice. Otherwise if the `minWidth` and/or `minHeight` are set using the skeleton binding properties  **`app:skeletonBoneMinWidth`** and **`app:skeletonBoneMinHeight`**, the dimensions will then be applied to the view and restored once the loading state is set to false. (The content has loaded). Additionally, restoring the bounds of the view once the content was loaded can be done using layout animations in order to provide a smoother user experience. This is optional and can be done by setting this to true **`skeletonAnimateRestoredBounds`**.
  
 When the state of a bone is true (Loading) and if the **`skeletonBoneToggleView`** is set to true, the view which the bone represents is hidden. When this is the case, if the owner view of the bone has an elevation, fake shadows are generated under the bone. This is done to preserve the look and feel. 
 
